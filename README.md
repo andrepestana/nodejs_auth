@@ -1,6 +1,22 @@
 # nodejs_auth
 
-## .env sample
+Api to authenticate and authorize users with NodeJS. 
+
+So far we have the features:
+- signup
+- signin
+- email confirmation
+- change password
+- list all sessions for the current user
+- logout from sessions in other devices
+
+TODO: 
+- create user roles
+- create page for only admin user to see all user "sessions" and manage them
+- create a user page they can update and is visible for other users
+
+## Project setup  
+### .env sample
 
 Create a .env file on the project root with the content:
 
@@ -22,14 +38,14 @@ SEND_MAIL_ON_SIGNUP=false
 APP_URL=http://localhost:8080
 ```
 
-## Project setup
+### Download dependencies
 ```
 npm install
 ```
-## Run server
+### Run server
 ```
 npm run server
 ```
 
-## Download and run frontend
+### Download and run frontend
 <https://github.com/andrepestana/vue_auth>
