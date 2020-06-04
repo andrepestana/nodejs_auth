@@ -1,16 +1,23 @@
 {
   "name": "nodejs_auth",
+  "description": "NodeJS Auth",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "Andre Pestana",
+  "private": true,
   "scripts": {
-    "devStart": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon ./src/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "nodemailer": "^6.4.2",
+    "passport": "^0.4.1",
+    "passport-accesstoken": "^0.1.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "nodemon": "^2.0.2"
-  }
+  },
+  "devDependencies": {}
 }
