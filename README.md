@@ -19,6 +19,7 @@ SMTP_PORT=2525
 SMTP_USER=<your_mailtrap_user>
 SMTP_PASS=<your_mailtrap_pass>
 SEND_MAIL_ON_SIGNUP=false
+APP_URL=http://localhost:8080
 ```
 
 ## Project setup
