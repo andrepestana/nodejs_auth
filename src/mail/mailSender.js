@@ -35,6 +35,7 @@ module.exports = {
         }
       },
       createMailOptionsForEmailConfirmation(user) {
+        console.log('ConfirmationEmailTokenLink', this.generateConfirmationEmailTokenLink(user))
         return {
           from: process.env.SMTP_FROM,
           to: user.username,
@@ -53,10 +54,10 @@ module.exports = {
         })
       },
       generateConfirmationEmailTokenLink(user) {
-        return process.env.VUE_APP_URL + emailConfirmationEndPoint + '?emailConfirmationToken=' + user.emailConfirmationToken
+        return process.env.APP_URL + emailConfirmationEndPoint + '?emailConfirmationToken=' + user.emailConfirmationToken
       },
       generateRetrievePasswordTokenLink(retrievePasswordToken) {
-        return process.env.VUE_APP_URL + changeLostPasswordEndPoint + '?retrievePasswordToken=' + retrievePasswordToken
+        return process.env.APP_URL + changeLostPasswordEndPoint + '?retrievePasswordToken=' + retrievePasswordToken
       }
       
 }

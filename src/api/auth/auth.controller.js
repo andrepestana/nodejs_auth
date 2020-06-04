@@ -70,7 +70,7 @@ exports.signup = function (req, res) {
 
     // validate form
     validationMessages.pushArray(userValidation.validateUsername(req.body.username))
-    validationMessages.pushArray(userValidation.validateUsernameDoesntExist(req.body.username))
+    validationMessages.pushArray(userValidation.validateUsernameExists(req.body.username))
     validationMessages.pushArray(userValidation.validatePassword(req.body.password))
     validationMessages.pushArray(userValidation.validateConfirmPassword(req.body.password, req.body.confirmPassword))
     validationMessages.pushArray(userValidation.validateAge(req.body.age))
@@ -102,7 +102,7 @@ exports.confirmEmail = function (req, res) {
     const emailConfirmationToken = req.query.emailConfirmationToken
 
     const emailConfirmationValidationErrorMessage = {
-        messages: messageUtil.successMessages('confirmEmail'
+        messages: messageUtil.warningMessages('confirmEmail',
             `The link to confirm email is not valid`)
     }
 
@@ -117,7 +117,7 @@ exports.confirmEmail = function (req, res) {
         let persistedUser = userDao.retrieveUserByUsername(username)
         persistedUser.confirmedEmail = true
         userDao.updateUser(persistedUser)
-        res.json({
+        res.status(200).send({
             messages: messageUtil.successMessages('confirmEmail',
                 `The email address has been confirmed for ${username}`)
         })

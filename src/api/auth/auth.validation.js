@@ -33,7 +33,7 @@ module.exports = {
         let validationMessages = new extendedArray()
 
         const persistedUser = userDao.retrieveUserByUsername(username)
-        if(persistedUser) {
+        if(!persistedUser) {
             validationMessages.push(messageUtil.validationMessage(messageIdPrefix, `Username not registered`, messageForId))
         }
         return validationMessages
@@ -44,7 +44,7 @@ module.exports = {
         let validationMessages = new extendedArray()
 
         const persistedUser = userDao.retrieveUserByUsername(username)
-        if(!persistedUser || !persistedUser.username) {
+        if(persistedUser && persistedUser.username) {
             validationMessages.push({
                 messageForId,
                 messageIdPrefix,
