@@ -5,15 +5,21 @@ Api to authenticate and authorize users with NodeJS.
 So far we have the features:
 - signup
 - signin
-- email confirmation
+- persistent session in the browser
+- user email confirmation
 - change password
 - list all sessions for the current user
 - logout from sessions in other devices
+- recover lost password through email with link to change password
 
 TODO: 
 - create user roles
 - create page for only admin user to see all user "sessions" and manage them
 - create a user page they can update and is visible for other users
+- logs in files
+- unit tests
+- implement persistence in DB
+- logon through facebook and google authentication
 
 ## Project setup  
 ### .env sample
@@ -30,6 +36,8 @@ REFRESH_TOKEN_SECRET=secret2
 REFRESH_TOKEN_EXPIRATION=1d
 EMAIL_CONFIRMATION_TOKEN_SECRET=secret3
 EMAIL_CONFIRMATION_TOKEN_EXPIRATION=7d
+RETRIEVE_PASSWORD_TOKEN_SECRET=secret4
+RETRIEVE_PASSWORD_TOKEN_EXPIRATION=2d
 SMTP_HOST=smtp.mailtrap.io
 SMTP_PORT=2525
 SMTP_USER=<your_mailtrap_user>
