@@ -1,6 +1,6 @@
 # nodejs_auth
 
-
+## About
 Api to authenticate and authorize users with NodeJS. 
 
 So far we have the features:
@@ -58,3 +58,35 @@ npm run server
 
 ### Download and run frontend
 <https://github.com/andrepestana/vue_auth>
+
+
+## Project deploy
+### Create docker image
+```
+sudo docker build -t nodejs_auth .
+```
+
+### Run docker image
+```
+sudo docker run --env-file=.env  -p 3000:3000 -d nodejs_auth
+```
+
+### List containers
+```
+sudo docker container ls -a
+```
+
+### Check stdout/stderr from running container
+```
+sudo docker logs <container id>
+```
+
+### Stop container
+```
+sudo docker container stop <container id>
+```
+
+### System prune
+```
+sudo docker system prune
+```
