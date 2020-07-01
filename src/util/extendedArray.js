@@ -1,7 +1,6 @@
  class ExtendedArray extends Array {
-    constructor(name, ...items) {
-        super(...items);
-        this.name = name;     
+    constructor(...items) {
+        super(...items);  
     }
     pushDefined(item) {
         if(item) this.push(item);

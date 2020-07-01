@@ -1,5 +1,5 @@
 
-let messageUtil = {
+const messageUtil = {
     successMessage(messageIdPrefix, message) {
         return {
             messageId: messageIdPrefix + 'SuccessId',

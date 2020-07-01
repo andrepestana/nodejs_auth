@@ -5,7 +5,8 @@
   "author": "Andre Pestana",
   "private": true,
   "scripts": {
-    "server": "nodemon ./src/server.js"
+    "server": "nodemon ./src/server.js",
+    "test": "mocha 'test/**/*.spec.js'"
   },
   "dependencies": {
     "bcrypt": "^3.0.8",
@@ -20,5 +21,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "^8.0.1"
+  }
 }
