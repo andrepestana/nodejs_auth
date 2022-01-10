@@ -27,4 +27,6 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: echo "Hello ${{ secrets.SECRETTEST1 }}"
+      env:
+        TEST: ${{ secrets.SECRETTEST1 }}
+      run: echo "Hello $TEST"
